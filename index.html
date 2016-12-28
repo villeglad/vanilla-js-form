@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <form action="#" method="POST" id="form1" onsubmit="form.submit(event)">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+            <div class="form-control-feedback" style="display: none"></div>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+            <div class="form-control-feedback" style="display: none"></div>
+        </div>
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" class="form-control" id="company" name="company">
+            <div class="form-control-feedback" style="display: none"></div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" name="age">
+            <div class="form-control-feedback" style="display: none"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-form">Submit</button>
+    </form>
+</div>
+
+<script src="form.js"></script>
+<script>
+    var form = new Form({
+        id: 'form1',
+        validations: {
+            email: ['email', 'required'],
+            name: ['required'],
+            age: ['number']
+        },
+        hide: {
+            company: {
+                name: ['empty']
+            }
+        },
+        config: {
+            errorMsgClass: 'form-control-feedback',
+            language: 'fi'
+        }
+    })
+
+
+</script>
+</body>
+</html>
